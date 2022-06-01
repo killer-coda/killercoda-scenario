@@ -1,7 +1,7 @@
 
 {
-  "title": "ubuntu20.04-8GB",
+  "title": "ubuntu",
   "backend": {
-    "imageid": "ubuntu20.04-8GB"
+    "imageid": "ubuntu"
   }
 }
