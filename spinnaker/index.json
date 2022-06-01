@@ -1,6 +1,6 @@
 {
-    "title": "Deploy First Application with KubeVela",
-    "description": "Welcome to KubeVela! This scenario will guide you to deliver your first app.",
+    "title": "Spinnaker",
+    "description": "Spinnaker Workshop",
     "details": {
       "intro": {
         "text": "intro.md"
