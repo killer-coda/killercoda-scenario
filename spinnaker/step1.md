@@ -1,8 +1,6 @@
 ### Install kubecolor CLI
 
-RUN ```wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz && \
-tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && \
-cp kubecolor /usr/local/bin/```{{exec}}
+RUN `wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz && tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/`{{exec}}
 
 RUN `kubecolor version`{{exec}}    
 
