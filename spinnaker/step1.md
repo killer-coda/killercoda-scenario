@@ -1,31 +1,37 @@
-### Install KubeVela CLI
+### Install kubecolor CLI
 
-This is quite easy. Depends on your system, run one of scripts below.
+RUN `wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz && \
+tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && \
+cp kubecolor /usr/local/bin/`{{exec}}
 
-RUN `curl -fsSl https://kubevela.io/script/install.sh | bash -s 1.4.0`{{exec}}
+RUN `kubecolor version`{{exec}}    
 
-After install, you can run `vela version` to check vela CLI installed
+RUN `kubecolor version`{{exec}}    
 
-RUN `vela version`{{exec}}
+### Clone repo 
 
-### Install KubeVela Core
+RUN `git clone https://github.com/hbstarjason2021/spinnaker-install && cd spinnaker-install`{{exec}}
 
-RUN `vela install`{{exec}}
+### Install Halyard
 
-### Install VelaUX
+RUN `bash install-hal.sh`{{exec}}    
 
-RUN `vela addon enable velaux --version v1.4.0`{{exec}}
+### Install Minio    
 
-By default, velaux didn't have any exposed port, you can view it by:
+RUN `bash install-minio.sh`{{exec}}      
 
-`vela port-forward addon-velaux -n vela-system 8080:80 --address='0.0.0.0'`{{exec}}
+### Setting up the provider    
 
->Warning: `--address='0.0.0.0'` is just to adapt to the [killercoda.com](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md) platform and is not a requirement!
+RUN `bash setup-kubernetes-provider.sh`{{exec}}    
 
-Choose `> Cluster: local | Namespace: vela-system | Component: velaux | Kind: Service` for visit.
+### Deploy Spinnaker   
 
-[ACCESS VELAUX]({{TRAFFIC_HOST1_8080}})
+RUN `hal deploy apply`{{exec}}     
 
-`vela logs -n vela-system --name apiserver addon-velaux | grep "initialized admin username"`{{exec}}
+RUN `kubecolor -n spinnaker get po`{{exec}}
 
-If there is no password in logs, you can get it from secret with the name admin in the vela-system namespace.
+
+
+
+
+
