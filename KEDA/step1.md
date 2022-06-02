@@ -9,6 +9,7 @@ kubecolor version
 `kubecolor get pod -A`{{execute}}
 
 ```bash
+curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 helm repo add kedacore https://kedacore.github.io/charts
 helm repo update
 
