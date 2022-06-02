@@ -18,6 +18,7 @@ RUN `bash install-hal.sh`{{exec}}
 
 ### 4.Install Minio    
 
+RUN `sed -i  's/ens3/enp1s0/' install-minio.sh`{{exec}}      
 RUN `bash install-minio.sh`{{exec}}      
 
 ### 5.Setting up the provider    
