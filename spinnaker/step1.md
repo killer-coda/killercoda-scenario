@@ -12,6 +12,8 @@ RUN `git clone https://github.com/hbstarjason2021/spinnaker-install && cd spinna
 
 ### 3.Install Halyard
 
+RUN `apt-get update -y`{{exec}}
+
 RUN `bash install-hal.sh`{{exec}}    
 
 ### 4.Install Minio    
