@@ -25,11 +25,13 @@ helm install keda kedacore/keda --namespace keda
 sudo apt-get install erlang-nox -y
 sudo apt-get update -y
 sudo apt-get install rabbitmq-server -y
-sudo rabbitmq-plugins enable rabbitmq_management```{{execute}}
+sudo rabbitmq-plugins enable rabbitmq_management
+```{{execute}}
 
 ```bash
 sudo ufw allow proto tcp from any to any port 5672,15672
-sudo rabbitmqctl status | grep RabbitMQ```{{execute}}
+sudo rabbitmqctl status | grep RabbitMQ
+```{{execute}}
 
 3.Config RabbitMQ
 ```bash
