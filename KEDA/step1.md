@@ -21,13 +21,15 @@ helm install keda kedacore/keda --namespace keda
 
 
 2.Install RabbitMQ   
-`sudo apt-get install erlang-nox -y`{{execute}}
-`sudo apt-get update -y`{{execute}}
-`sudo apt-get install rabbitmq-server -y`{{execute}}
-`sudo rabbitmq-plugins enable rabbitmq_management`{{execute}}
+```bash
+sudo apt-get install erlang-nox -y
+sudo apt-get update -y
+sudo apt-get install rabbitmq-server -y
+sudo rabbitmq-plugins enable rabbitmq_management```{{execute}}
 
-`sudo ufw allow proto tcp from any to any port 5672,15672`{{execute}}
-`sudo rabbitmqctl status | grep RabbitMQ`{{execute}}
+```bash
+sudo ufw allow proto tcp from any to any port 5672,15672
+sudo rabbitmqctl status | grep RabbitMQ```{{execute}}
 
 3.Config RabbitMQ
 ```bash
@@ -47,7 +49,7 @@ rabbitmqadmin --host 127.0.0.1 -u guest -p guest \
 
 4.
 ```bash
-LOCAL_IP=$(ifconfig ens3 |grep "inet "| awk '{print $2}')
+LOCAL_IP=$(ifconfig enp1s0 |grep "inet "| awk '{print $2}')
 echo "$LOCAL_IP"
 ```{{execute}}
 
