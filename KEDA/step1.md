@@ -22,8 +22,8 @@ helm install keda kedacore/keda --namespace keda
 
 2.Install RabbitMQ   
 ```bash
-sudo apt-get install erlang-nox -y
 sudo apt-get update -y
+sudo apt-get install erlang-nox -y
 sudo apt-get install rabbitmq-server -y
 sudo rabbitmq-plugins enable rabbitmq_management
 ```{{execute}}
