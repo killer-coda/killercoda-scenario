@@ -47,7 +47,7 @@ rabbitmqadmin --host 127.0.0.1 -u guest -p guest \
     declare queue name=demo_queue
 ```{{execute}}  
 
-4.
+4.Deploy App
 ```bash
 LOCAL_IP=$(ifconfig enp1s0 |grep "inet "| awk '{print $2}')
 echo "$LOCAL_IP"
