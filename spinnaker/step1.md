@@ -1,4 +1,4 @@
-### Install kubecolor CLI
+### 1.Install kubecolor CLI
 
 RUN `wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz && tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/`{{exec}}
 
@@ -6,23 +6,23 @@ RUN `kubecolor version`{{exec}}
 
 RUN `kubecolor version`{{exec}}    
 
-### Clone repo 
+### 2.Clone repo 
 
 RUN `git clone https://github.com/hbstarjason2021/spinnaker-install && cd spinnaker-install`{{exec}}
 
-### Install Halyard
+### 3.Install Halyard
 
 RUN `bash install-hal.sh`{{exec}}    
 
-### Install Minio    
+### 4.Install Minio    
 
 RUN `bash install-minio.sh`{{exec}}      
 
-### Setting up the provider    
+### 5.Setting up the provider    
 
 RUN `bash setup-kubernetes-provider.sh`{{exec}}    
 
-### Deploy Spinnaker   
+### 6.Deploy Spinnaker   
 
 RUN `hal deploy apply`{{exec}}     
 
