@@ -1,5 +1,4 @@
-2c-2.4g    
+1c-1.94g    
 
-minikube   
-minikube-running   
+kubernetes-kubeadm-2nodes   
 
