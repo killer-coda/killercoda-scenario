@@ -22,7 +22,9 @@
 
 `kubectl get svc tekton-dashboard -n tekton-pipelines`{{execute}}    
 
-`kubectl port-forward -n tekton-pipelines --address=0.0.0.0 service/tekton-dashboard 80:9097 > /dev/null 2>&1 &`{{execute}}   
+`kubectl port-forward -n tekton-pipelines --address=0.0.0.0 service/tekton-dashboard 80:9097 > /dev/null 2>&1 &`{{execute}}     
+
+>Warning: `--address='0.0.0.0'` is just to adapt to the [killercoda.com](https://github.com/killercoda/scenario-examples/blob/main/network-traffic-kubernetes/step1.md) platform and is not a requirement!
 
 URL:[Access Tekton]({{TRAFFIC_HOST1_80}})     
 
