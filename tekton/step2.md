@@ -1,5 +1,4 @@
-`git clone https://github.com/hbstarjason2021/pipeline-craft && \
-cd pipeline-craft/tekton && ls -l `{{execute}}      
+`git clone https://github.com/hbstarjason2021/pipeline-craft && cd pipeline-craft/tekton && ls -l `{{execute}}      
 
 `kubectl apply -f 01-pipelineresource.yaml`{{execute}}   
 
