@@ -31,7 +31,8 @@ URL:[Access Tekton]({{TRAFFIC_HOST1_80}})
 4.Install Tekton Chains    
 `kubectl apply -f https://storage.googleapis.com/tekton-releases/chains/latest/release.yaml`{{execute}}       
 
->Warning:  [network-traffic](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md)  
-`docker run -d -p 80:80 nginx:alpine`{{execute}}     
+`curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`{{execute}}       
+>Warning:  [network-traffic](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md)     
+`docker run -d -p 80:80 nginx:alpine`{{execute}}       
 [ACCESS NGINX]({{TRAFFIC_HOST1_80}})    
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
