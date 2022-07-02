@@ -24,7 +24,7 @@
 
 `kubectl port-forward -n tekton-pipelines --address=0.0.0.0 service/tekton-dashboard 80:9097 > /dev/null 2>&1 &`{{execute}}   
 
-URL:https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/     
+URL:[Access Tekton]({{TRAFFIC_HOST1_80}})     
 
 4.Install Tekton Chains    
 `kubectl apply -f https://storage.googleapis.com/tekton-releases/chains/latest/release.yaml`{{execute}}       
