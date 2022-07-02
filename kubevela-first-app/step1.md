@@ -20,7 +20,7 @@ RUN `apt install xdg-utils -y`{{exec}}
 
 By default, velaux didn't have any exposed port, you can view it by:
 
-`vela port-forward addon-velaux -n vela-system 8080:80 --address='0.0.0.0'`{{exec}}
+`nohup vela port-forward addon-velaux -n vela-system 8080:80 --address='0.0.0.0' &`{{exec}}
 
 >Warning: `--address='0.0.0.0'` is just to adapt to the [killercoda.com](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md) platform and is not a requirement!
 
