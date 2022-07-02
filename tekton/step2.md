@@ -11,12 +11,12 @@
 1.Frist Taskrun Test   
 `kubectl apply -f task-echo-hello-world.yaml`{{execute}}    
 
-`kubectl apply -f taskrun-echo-hello-world.yaml`{{execute}}   
+`kubectl apply -f taskrun-echo-hello-world.yaml`{{execute}}     
 
-`kubectl get po`{{execute}}   
+`kubectl get po`{{execute}}     
 
-`tkn taskrun list`{{execute}}    
+`tkn taskrun list`{{execute}}      
 
-`tkn taskrun logs taskrun-echo-hello-world`{{execute}}     
+`tkn taskrun logs taskrun-echo-hello-world`{{execute}}       
 
 2.
