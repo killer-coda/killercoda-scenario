@@ -19,4 +19,9 @@
 
 `tkn taskrun logs taskrun-echo-hello-world`{{execute}}       
 
-2.
+2.Official pipeline demo   
+`kubectl apply -f official_demo.yaml`{{execute}}    
+
+`tkn pipelinerun logs hello-goodbye-run -f -n default`{{execute}} 
+
+
