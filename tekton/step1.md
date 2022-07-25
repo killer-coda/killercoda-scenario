@@ -31,7 +31,10 @@ URL:[Access Tekton]({{TRAFFIC_HOST1_80}})
 4.Install Tekton Chains    
 `kubectl apply -f https://storage.googleapis.com/tekton-releases/chains/latest/release.yaml`{{execute}}       
 
-`curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`{{execute}}       
+`curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`{{execute}} 
+
+`wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz && tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/ && kubecolor version`{{execute}} 
+
 >Warning:  [network-traffic](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md)     
 `docker run -d -p 80:80 nginx:alpine`{{execute}}       
 [ACCESS NGINX]({{TRAFFIC_HOST1_80}})    
