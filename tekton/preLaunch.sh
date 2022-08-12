@@ -4,3 +4,4 @@ unzip terraform_${TF_VERSION}_linux_amd64.zip
 mv terraform /usr/local/bin
 terraform version   
 terraform -install-autocomplete
+touch ~/main.tf 
