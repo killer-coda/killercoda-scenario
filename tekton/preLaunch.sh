@@ -12,6 +12,12 @@ K9S_VERSION=v0.26.3
 wget https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Linux_x86_64.tar.gz
 tar -xvf k9s_Linux_x86_64.tar.gz
 
+# install helm 
+curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+# install kubecolor
+wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz
+tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/ && kubecolor version
 
 # wait fo k8s ready
 while ! kubectl get nodes | grep -w "Ready"; do
