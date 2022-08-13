@@ -15,7 +15,8 @@ wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0
 tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/ && kubecolor version
 
 ## install minikube
-minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --cni=cilium --kubernetes-version=v1.23.3 --force --cpus=1
+## minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --cni=cilium --kubernetes-version=v1.23.3 --force --cpus=1
+minikube start --network-plugin=cni --cni=false --force --cpus=1
 
 ## install cilium
 curl -L --remote-name-all \
