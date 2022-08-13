@@ -12,7 +12,12 @@ RUN `minikube addons enable ingress metrics-server`{{exec}}
 
 RUN `minikube addons list`{{exec}}    
 
-RUN `kubecolor get po -A`{{exec}} 
+RUN `kubecolor get po -A`{{exec}}   
 
+RUN `cilium version`{{exec}}     
+
+RUN `cilium status --wait`{{exec}}  
+
+RUN `cilium hubble enable --ui`{{exec}}  
 
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
