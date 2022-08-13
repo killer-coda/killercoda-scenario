@@ -16,6 +16,8 @@ RUN `kubecolor get po -A`{{exec}}
 
 RUN `cilium version`{{exec}}     
 
+RUN `cilium install`{{exec}}   
+
 RUN `cilium status --wait`{{exec}}  
 
 RUN `cilium hubble enable --ui`{{exec}}  
