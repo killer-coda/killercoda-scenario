@@ -1,6 +1,20 @@
-
 {
-  "title": "ubuntu",
+  "title": "Ubuntu",
+  "description": "Ubuntu",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Install k3s",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
   "backend": {
     "imageid": "ubuntu"
   }
