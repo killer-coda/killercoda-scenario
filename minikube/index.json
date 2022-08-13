@@ -1,6 +1,6 @@
 {
   "title": "Minikube",
-  "description": "minikube",
+  "description": "minikube+cilium",
   "details": {
     "intro": {
       "text": "intro.md",
