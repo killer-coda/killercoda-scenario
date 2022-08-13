@@ -12,7 +12,9 @@ RUN `minikube addons enable ingress metrics-server`{{exec}}
 
 RUN `minikube addons list`{{exec}}    
 
-RUN `kubecolor get po -A`{{exec}}   
+RUN `kubecolor get po -A`{{exec}}  
+
+## cilium
 
 RUN `cilium version`{{exec}}     
 
