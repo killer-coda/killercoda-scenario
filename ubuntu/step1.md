@@ -9,3 +9,5 @@ RUN `k3s check-config`{{exec}}
 
 RUN `kubectl get po -A`{{exec}}
 
+
+[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
