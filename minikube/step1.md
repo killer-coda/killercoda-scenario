@@ -1,8 +1,8 @@
 ## Install minikube
 
-RUN `minikube`{{exec}}   
+RUN `minikube version`{{exec}}   
 
-RUN `minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1`{{exec}}
+RUN `minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --cni=cilium --kubernetes-version=v1.23.3 --force --cpus=1`{{exec}}
 
 RUN `minikube addons list`{{exec}}       
 
