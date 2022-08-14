@@ -21,3 +21,7 @@ vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get ns
 vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get pod -A
 vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get svc -A
 
+
+vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl create deployment nginx-${VCLUSTER_NAME} --image=nginx:alpine
+vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl create service nodeport nginx-${VCLUSTER_NAME} --tcp=80:80
+
