@@ -1,0 +1,22 @@
+{
+  "title": "Cluster-API",
+  "description": "cluster-api workshop",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "init.sh"
+    },
+    "steps": [
+      {
+        "title": "Install cluster-api",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
