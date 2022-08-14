@@ -7,15 +7,17 @@ storage:
   className: local-path
 EOF
 
-kubectl create ns zhang-vcluster  
-helm upgrade --install zhang-vcluster vcluster \
+VCLUSTER_NAME="zhang-vcluster"
+
+kubectl create ns ${VCLUSTER_NAME}  
+helm upgrade --install ${VCLUSTER_NAME} vcluster \
   --values vcluster.yaml \
   --repo https://charts.loft.sh \
-  --namespace zhang-vcluster \
+  --namespace ${VCLUSTER_NAME} \
   --repository-config=''
  
 
-vcluster connect zhang-vcluster -n zhang-vcluster -- kubectl get ns
-vcluster connect zhang-vcluster -n zhang-vcluster -- kubectl get pod -A
-vcluster connect zhang-vcluster -n zhang-vcluster -- kubectl get svc -A
+vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get ns
+vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get pod -A
+vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get svc -A
 
