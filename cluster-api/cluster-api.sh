@@ -28,4 +28,7 @@ clusterctl describe cluster capi-quickstart
 kubectl get kubeadmcontrolplane
 clusterctl get kubeconfig capi-quickstart > capi-quickstart.kubeconfig
 
+kubectl --kubeconfig=./capi-quickstart.kubeconfig \
+  apply -f https://docs.projectcalico.org/v3.21/manifests/calico.yaml
 
+kubectl --kubeconfig=./capi-quickstart.kubeconfig get nodes
