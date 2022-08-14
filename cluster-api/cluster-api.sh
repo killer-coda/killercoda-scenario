@@ -11,7 +11,7 @@ export SERVICE_CIDR=["10.96.0.0/12"]
 export POD_CIDR=["192.168.0.0/16"]
 
 # The service domain, default "cluster.local"
-export SERVICE_DOMAIN="k8s.test"
+#export SERVICE_DOMAIN="k8s.test"
 
 
 clusterctl generate cluster capi-quickstart --flavor development \
