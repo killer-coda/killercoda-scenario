@@ -4,6 +4,7 @@ RUN `curl -s -L "https://github.com/loft-sh/vcluster/releases/latest" | sed -nE 
 
 RUN `mv vcluster /usr/local/bin`{{exec}}
 
+RUN `kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.22/deploy/local-path-storage.yaml`{{exec}}   
 
 RUN `kubecolor get po -A`{{exec}}    
 
