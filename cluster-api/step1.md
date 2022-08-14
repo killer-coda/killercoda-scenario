@@ -3,10 +3,7 @@
 
 RUN `clusterctl version`{{exec}}
 
-RUN ```bash
-export CLUSTER_TOPOLOGY=true
-clusterctl init --infrastructure docker
-```{{exec}}   
+RUN `export CLUSTER_TOPOLOGY=true && clusterctl init --infrastructure docker`{{exec}}   
 
 RUN ```bash
 export SERVICE_CIDR=["10.96.0.0/12"]
@@ -19,9 +16,7 @@ clusterctl generate cluster capi-quickstart --flavor development \
   
 kubectl apply -f capi-quickstart.yaml
 
-kubectl get cluster
- 
-```{{exec}}   
+kubectl get cluster```{{exec}}   
 
 RUN `clusterctl describe cluster capi-quickstart `{{exec}}   
 
