@@ -29,7 +29,7 @@ vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl create service 
 kubectl config get-contexts
 
 kubectl config current-context
-kubectl config kubernetes-admin@kubernetes
+kubectl config use-context kubernetes-admin@kubernetes
 kubectl config use-context vcluster_zhang-vcluster_zhang-vcluster_kubernetes-admin@kubernetes 
 
 
