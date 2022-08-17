@@ -25,4 +25,9 @@ vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl get svc -A
 vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl create deployment nginx-${VCLUSTER_NAME} --image=nginx:alpine
 vcluster connect ${VCLUSTER_NAME} -n ${VCLUSTER_NAME} -- kubectl create service nodeport nginx-${VCLUSTER_NAME} --tcp=80:80
 
+
+kubectl config get-contexts
+kubectl config use-context vcluster_zhang-vcluster_zhang-vcluster_kubernetes-admin@kubernetes 
+
+
 ### vcluster delete ${VCLUSTER_NAME}
