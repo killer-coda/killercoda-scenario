@@ -1,9 +1,14 @@
 ## signoz
 
 
-RUN `helm repo add signoz https://charts.signoz.io && helm repo list`{{exec}}
+RUN `helm repo add signoz https://charts.signoz.io && helm repo list`{{exec}}    
 
-RUN `kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.22/deploy/local-path-storage.yaml`{{exec}}   
+RUN `kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.22/deploy/local-path-storage.yaml`{{exec}}     
+
+RUN `kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-  &&  kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-`{{exec}}   
+
+
+
 
 RUN `kubectl create deployment nginx --image=nginx:alpine`{{exec}}   
 
