@@ -1,0 +1,22 @@
+{
+  "title": "SigNoz",
+  "description": "signoz workshop",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "init.sh"
+    },
+    "steps": [
+      {
+        "title": "Install signoz",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
