@@ -35,7 +35,9 @@ RUN `kubecolor get pods -n linkerd-viz`{{exec}}
 RUN `kubecolor get svc -n linkerd-viz`{{exec}}   
 
 RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/grafana 3000:3000 > /dev/null 2>&1 &`{{exec}}     
+
 RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/prometheus 9090:9090 > /dev/null 2>&1 &`{{exec}}   
+
 RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/web 8084:8084 > /dev/null 2>&1 &`{{exec}}   
 
 
