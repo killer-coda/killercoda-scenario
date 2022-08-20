@@ -16,29 +16,30 @@ RUN `linkerd check`{{exec}}
 
 RUN `curl -fsL https://run.linkerd.io/emojivoto.yml | kubectl apply -f -`{{exec}} 
 
-RUN `kubectl get pods -n emojivoto`{{exec}}   
+RUN `kubecolor get pods -n emojivoto`{{exec}}   
 
-RUN `kubectl get svc -n emojivoto`{{exec}} 
+RUN `kubecolor get svc -n emojivoto`{{exec}} 
 
 RUN `kubectl -n emojivoto port-forward --address=0.0.0.0 svc/web-svc 80:80 > /dev/null 2>&1 &`{{exec}}  
 
 RUN `kubectl get -n emojivoto deploy -o yaml | linkerd inject - | kubectl apply -f -`{{exec}} 
 
-RUN `kubectl get pods -n emojivoto`{{exec}}  
+RUN `kubecolor get pods -n emojivoto`{{exec}}  
 
 RUN `linkerd -n emojivoto check --proxy`{{exec}} 
 
 RUN `linkerd viz install | kubectl apply -f -`{{exec}}  
 
-RUN `kubectl get pods -n linkerd-viz`{{exec}}  
+RUN `kubecolor get pods -n linkerd-viz`{{exec}}  
 
-RUN `kubectl get svc -n linkerd-viz`{{exec}}  
+RUN `kubecolor get svc -n linkerd-viz`{{exec}}   
 
-
+RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/grafana 3000:3000 > /dev/null 2>&1 &`{{exec}}     
+RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/prometheus 9090:9090 > /dev/null 2>&1 &`{{exec}}   
+RUN `kubectl -n linkerd-viz port-forward --address=0.0.0.0 svc/web 8084:8084 > /dev/null 2>&1 &`{{exec}}   
 
 
 RUN `kubectl create deployment nginx --image=nginx:alpine`{{exec}}   
-
 RUN `kubectl create service nodeport nginx --tcp=80:80`{{exec}}   
 
 RUN `kubecolor get po -A`{{exec}}    
