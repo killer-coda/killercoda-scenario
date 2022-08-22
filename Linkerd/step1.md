@@ -24,7 +24,9 @@ RUN `kubectl -n emojivoto port-forward --address=0.0.0.0 svc/web-svc 80:80 > /de
 
 RUN `kubectl get -n emojivoto deploy -o yaml | linkerd inject - | kubectl apply -f -`{{exec}} 
 
-RUN `kubecolor get pods -n emojivoto`{{exec}}  
+RUN `kubecolor get pods -n emojivoto`{{exec}}    
+
+RUN `kubectl -n emojivoto get po -o jsonpath='{.items[0].spec.containers[*].name}'`{{exec}} 
 
 RUN `linkerd -n emojivoto check --proxy`{{exec}} 
 
