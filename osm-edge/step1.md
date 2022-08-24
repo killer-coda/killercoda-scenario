@@ -20,6 +20,19 @@ RUN `helm install fsm fsm/fsm --namespace "$fsm_namespace" --create-namespace`{{
 
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
+## setup book demo 
+
+RUN `kubectl create namespace bookstore`{{exec}} 
+
+RUN `kubectl create namespace bookbuyer`{{exec}} 
+
+RUN `kubectl create namespace bookthief`{{exec}}   
+
+RUN `kubectl create namespace bookwarehouse`{{exec}}    
+
+RUN `osm namespace add bookstore bookbuyer bookthief bookwarehouse`{{exec}}  
+
+RUN `osm metrics enable --namespace "bookstore,bookbuyer,bookthief,bookwarehouse"`{{exec}} 
 
 
 
