@@ -34,6 +34,11 @@ RUN `osm namespace add bookstore bookbuyer bookthief bookwarehouse`{{exec}}
 
 RUN `osm metrics enable --namespace "bookstore,bookbuyer,bookthief,bookwarehouse"`{{exec}} 
 
+RUN `git clone https://github.com/flomesh-io/osm-edge-docs && cd osm-edge-docs/manifests/apps`{{exec}} 
+
+RUN `kubectl apply -f bookbuyer.yaml && kubectl apply -f bookthief.yaml && kubectl apply -f bookstore.yaml && kubectl apply -f bookwarehouse.yaml && mysql.yaml`{{exec}} 
+
+RUN `kubecolor get po -A`{{exec}} 
 
 
 ## Test 
