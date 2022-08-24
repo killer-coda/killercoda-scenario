@@ -14,7 +14,7 @@ RUN `cp ./${system}-${arch}/osm /usr/local/bin/ && osm version`{{exec}}
 
 RUN `export osm_namespace=osm-system ; export osm_mesh_name=osm`{{exec}}   
 
-RUN `nohup osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=osm.deployPrometheus=true  --set=osm.deployGrafana=true --set=osm.deployJaeger=true --set=osm.tracing.enable=true --set=fsm.enabled=true &`{{exec}}   
+RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=osm.deployPrometheus=true  --set=osm.deployGrafana=true --set=osm.deployJaeger=true --set=osm.tracing.enable=true --set=fsm.enabled=true  > /dev/null 2>&1 &`{{exec}}   
 
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
