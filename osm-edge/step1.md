@@ -1,6 +1,6 @@
-## osm-edge CLI Install 
+RUN `kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-  &&  kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-`{{exec}}   
 
-RUN `kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-  &&  kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-`{{exec}}    
+## osm-edge CLI Install  
 
 RUN `system=$(uname -s | tr [:upper:] [:lower:]) ; arch=$(dpkg --print-architecture) ; release=v1.1.1`{{exec}}   
 
@@ -9,7 +9,14 @@ RUN `curl -L https://github.com/flomesh-io/osm-edge/releases/download/${release}
 
 RUN `cp ./${system}-${arch}/osm /usr/local/bin/ && osm version`{{exec}} 
 
-RUN ``{{exec}} 
+
+## osm-edge Install   
+
+RUN `export osm_namespace=osm-system ; export osm_mesh_name=osm`{{exec}}   
+
+RUN `nohup osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=osm.deployPrometheus=true  --set=osm.deployGrafana=true --set=osm.deployJaeger=true --set=osm.tracing.enable=true --set=fsm.enabled=true &`{{exec}}   
+
+RUN `kubecolor get po -n osm-system`{{exec}}  
 
 
 
