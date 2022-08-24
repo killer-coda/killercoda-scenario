@@ -12,9 +12,11 @@ RUN `cp ./${system}-${arch}/osm /usr/local/bin/ && osm version`{{exec}}
 
 ## osm-edge Install   
 
-RUN `export osm_namespace=osm-system ; export osm_mesh_name=osm`{{exec}}   
+RUN `helm repo add fsm https://charts.flomesh.io`{{exec}}   
 
-RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=osm.deployPrometheus=true  --set=osm.deployGrafana=true --set=osm.deployJaeger=true --set=osm.tracing.enable=true --set=fsm.enabled=true  > /dev/null 2>&1 &`{{exec}}   
+RUN `export fsm_namespace=osm-system`{{exec}}   
+
+RUN `helm install fsm fsm/fsm --namespace "$fsm_namespace" --create-namespace`{{exec}}  
 
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
