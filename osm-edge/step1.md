@@ -12,12 +12,9 @@ RUN `cp ./${system}-${arch}/osm /usr/local/bin/ && osm version`{{exec}}
 
 ## osm-edge Install   
 
-RUN `helm repo add fsm https://charts.flomesh.io`{{exec}}   
+RUN `export osm_namespace=osm-system ;export osm_mesh_name=osm`{{exec}}   
 
-RUN `export fsm_namespace=osm-system`{{exec}}   
-
-RUN `helm install fsm fsm/fsm --namespace "$fsm_namespace" --create-namespace`{{exec}}  
-
+RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=fsm.enabled=true`{{exec}}   
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
 ## setup book demo 
