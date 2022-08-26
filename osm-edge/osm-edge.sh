@@ -1,5 +1,6 @@
 ### osm-edge
 
+### https://github.com/flomesh-io/flomesh-workshop/blob/main/flomesh/101-quickstart.md
 
 system=$(uname -s | tr [:upper:] [:lower:])
 arch=$(dpkg --print-architecture)
