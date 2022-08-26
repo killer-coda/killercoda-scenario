@@ -14,7 +14,7 @@ RUN `cp ./${system}-${arch}/osm /usr/local/bin/ && osm version`{{exec}}
 
 RUN `export osm_namespace=osm-system ;export osm_mesh_name=osm`{{exec}}   
 
-RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true --set=fsm.enabled=true`{{exec}}   
+RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true`{{exec}}   
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
 ## setup book demo 
