@@ -26,3 +26,4 @@ osm install \
  kubectl get po -n osm-system
  
  
+#### curl -sfL https://getk8e.com/install.sh | K8E_TOKEN=k8e-mesh INSTALL_K8E_EXEC="server --cluster-init --write-kubeconfig-mode 644 --write-kubeconfig ~/.kube/config" sh -
