@@ -48,13 +48,13 @@ export BOOKWAREHOUSE_NAMESPACE=bookwarehouse
 BOOKBUYER_LOCAL_PORT="${BOOKBUYER_LOCAL_PORT:-8080}"
 POD="$(kubectl get pods --selector app=bookbuyer -n bookbuyer --no-headers  | grep 'Running' | awk 'NR==1{print $1}')"
 
-kubectl port-forward "$POD" -n bookbuyer "$BOOKBUYER_LOCAL_PORT":14001 --address 0.0.0.0 > /dev/null 2>&1
+kubectl port-forward "$POD" -n bookbuyer 8080:14001 --address 0.0.0.0 > /dev/null 2>&1
 
 
 BOOKTHIEF_LOCAL_PORT="${BOOKTHIEF_LOCAL_PORT:-8083}"
 POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers | grep 'Running' | awk 'NR==1{print $1}')"
 
-kubectl port-forward "$POD" -n bookthief "$BOOKTHIEF_LOCAL_PORT":14001 --address 0.0.0.0 > /dev/null 2>&1
+kubectl port-forward "$POD" -n bookthief 8083:14001 --address 0.0.0.0 > /dev/null 2>&1
 
 
 BOOKSTORE_LOCAL_PORT="${BOOKSTORE_LOCAL_PORT:-8084}"
