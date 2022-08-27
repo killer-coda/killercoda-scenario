@@ -62,5 +62,16 @@ RUN `POD="$(kubectl get pods --selector app="bookstore-v2" -n bookstore --no-hea
 URL:[Access Tekton]({{TRAFFIC_HOST1_8082}})    
 
 
+RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/split/traffic-split-v1.yaml
+`{{exec}}    
+
+RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/split/traffic-split-50-50.yaml
+`{{exec}}       
+
+RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/split/traffic-split-v2.yaml
+`{{exec}}    
+
+
+
 
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
