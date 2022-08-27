@@ -29,3 +29,7 @@ osm install \
  
  
 #### curl -sfL https://getk8e.com/install.sh | K8E_TOKEN=k8e-mesh INSTALL_K8E_EXEC="server --cluster-init --write-kubeconfig-mode 644 --write-kubeconfig ~/.kube/config" sh -
+
+
+kubectl apply -f  https://raw.githubusercontent.com/killer-coda/killercoda-scenario/main/osm-edge/namespace.yml
+
