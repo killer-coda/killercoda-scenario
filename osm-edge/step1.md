@@ -57,7 +57,6 @@ RUN `kubectl patch meshconfig osm-mesh-config -n osm-system -p '{"spec":{"traffi
 `{{exec}}    
 
 允许正常的访问，然后检查页面上计数器的变化。        
-
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/release-v1.1/manifests/access/traffic-access-v1.yaml
 `{{exec}}    
 
