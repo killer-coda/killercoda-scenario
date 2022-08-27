@@ -55,4 +55,8 @@ RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs
 `{{exec}}    
 
 
+RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/apps/bookstore-v2.yaml`{{exec}}   
+
+
+
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
