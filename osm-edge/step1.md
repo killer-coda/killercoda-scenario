@@ -46,7 +46,13 @@ URL:[Access Tekton]({{TRAFFIC_HOST1_8080}})
 
 RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookthief 8083:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}    
 
-URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})  
+URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})    
+
+RUN `kubectl patch meshconfig osm-mesh-config -n osm-system -p '{"spec":{"traffic":{"enablePermissiveTrafficPolicyMode":false}}}'  --type=merge
+`{{exec}}    
+
+RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/release-v1.1/manifests/access/traffic-access-v1.yaml
+`{{exec}}    
 
 
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
