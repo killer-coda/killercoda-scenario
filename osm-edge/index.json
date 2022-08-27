@@ -20,7 +20,7 @@
         "text": "finish.md"
       },      
       "assets": {
-        "host01": [
+        "controlplane": [
           {"file": "namespace.yml", "target": "~/", "chmod": "+w"},
           {"file": "local-path-storage.yaml", "target": "~/"}
         ]
