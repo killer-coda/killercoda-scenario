@@ -44,7 +44,7 @@ RUN `POD="$(kubectl get pods --selector app=bookbuyer -n bookbuyer --no-headers 
 URL:[Access Tekton]({{TRAFFIC_HOST1_8080}}) 
 
 
-RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookthief 8083:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}    
+RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookthief 8083:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}     
 
 URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})    
 
@@ -57,7 +57,9 @@ RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs
 
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/apps/bookstore-v2.yaml`{{exec}}   
 
-RUN `POD="$(kubectl get pods --selector app="bookstore-v2" -n bookstore --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookstore 8082:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}   
+RUN `POD="$(kubectl get pods --selector app="bookstore-v2" -n bookstore --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookstore 8082:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}     
+
+URL:[Access Tekton]({{TRAFFIC_HOST1_8082}})    
 
 
 
