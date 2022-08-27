@@ -10,6 +10,10 @@
       {
         "title": "Install osm-edge",
         "text": "step1.md"
+      },
+      {
+        "title": "Canary",
+        "text": "step2.md"
       }
     ],
     "finish": {
