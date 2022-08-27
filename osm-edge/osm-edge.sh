@@ -1,5 +1,7 @@
 ### osm-edge
 
+### https://osm-edge-docs.flomesh.io/zh/docs/quickstart/
+
 ### https://github.com/flomesh-io/flomesh-workshop/blob/main/flomesh/101-quickstart.md
 
 system=$(uname -s | tr [:upper:] [:lower:])
