@@ -38,12 +38,14 @@ RUN `kubectl apply -f bookbuyer.yaml && kubectl apply -f bookthief.yaml && kubec
 RUN `kubecolor get po -A`{{exec}} 
 
 
-## Test 
-RUN `kubectl create deployment nginx --image=nginx:alpine`{{exec}}   
-RUN `kubectl create service nodeport nginx --tcp=80:80`{{exec}}   
+## Test   
+RUN `POD="$(kubectl get pods --selector app=bookbuyer -n bookbuyer --no-headers  | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookbuyer 8080:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}   
 
-RUN `kubecolor get po -A`{{exec}}    
+URL:[Access Tekton]({{TRAFFIC_HOST1_8080}}) 
 
+
+RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookthief 8083:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}} 
+URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})  
 
 
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
