@@ -17,7 +17,7 @@ RUN `export osm_namespace=osm-system ;export osm_mesh_name=osm`{{exec}}
 RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true`{{exec}}   
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
-## Deploy book demo 
+## Deploy bookstore demo 
 
 RUN `kubectl create namespace bookstore`{{exec}} 
 
