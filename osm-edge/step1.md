@@ -16,7 +16,7 @@ RUN `export osm_namespace=osm-system ;export osm_mesh_name=osm`{{exec}}
 
 RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true`{{exec}}  
 
-安装需要一点时间，等待pod全部启动。
+安装需要一点时间，等待pod全部启动。     
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
 ## Deploy bookstore demo 
