@@ -1,26 +1,32 @@
 {
-  "title": "osm-edge",
-  "description": "osm-edge workshop",
-  "details": {
-    "intro": {
-      "text": "intro.md",
-      "background": "init.sh"
-    },
-    "steps": [
-      {
-        "title": "Install osm-edge",
-        "text": "step1.md"
-      },
-      {
-        "title": "Canary",
-        "text": "step2.md"
+    "title": "osm-edge",
+    "description": "osm-edge workshop",
+    "details": {
+      "intro": {
+          "text": "intro.md",
+          "background": "init.sh"
+      },    
+      "steps": [
+        {
+          "title": "Install osm-edge",
+          "text": "step1.md"
+        },
+        {
+            "title": "Canary",
+            "text": "step2.md"
+          }   
+      ],
+      "finish": {
+        "text": "finish.md"
+      },      
+      "assets": {
+        "host01": [
+          {"file": "namespace.yml", "target": "~/", "chmod": "+w"},
+          {"file": "local-path-storage.yaml", "target": "~/"}
+        ]
       }
-    ],
-    "finish": {
-      "text": "finish.md"
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"
     }
-  },
-  "backend": {
-    "imageid": "kubernetes-kubeadm-2nodes"
-  }
 }
