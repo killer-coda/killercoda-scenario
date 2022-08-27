@@ -17,7 +17,7 @@ RUN `export osm_namespace=osm-system ;export osm_mesh_name=osm`{{exec}}
 RUN `osm install --mesh-name "$osm_mesh_name" --osm-namespace "$osm_namespace" --set=osm.enablePermissiveTrafficPolicy=true`{{exec}}   
 RUN `kubecolor get po -n osm-system`{{exec}}  
 
-## setup book demo 
+## Deploy book demo 
 
 RUN `kubectl create namespace bookstore`{{exec}} 
 
@@ -50,20 +50,19 @@ RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers 
 URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})    
 
 ### Test1：访问控制
->Info: 目标：禁止 bookthief 从 bookstore 偷书，不影响书籍的正常购买。    
+>目标：禁止 bookthief 从 bookstore 偷书，不影响书籍的正常购买。    
 
 关闭宽松流量策略模式，检查 bookthief 和 bookbuyer 的计数器。      
 RUN `kubectl patch meshconfig osm-mesh-config -n osm-system -p '{"spec":{"traffic":{"enablePermissiveTrafficPolicyMode":false}}}'  --type=merge
 `{{exec}}    
-
->Warning: 部署流量访问策略。   
 
 允许正常的访问，然后检查页面上计数器的变化。        
 
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/release-v1.1/manifests/access/traffic-access-v1.yaml
 `{{exec}}    
 
-### Test2：灰度发布    
+### Test2：灰度发布  
+>目标：实现灰度发布。
 
 部署 bookstore-v2 版本。                  
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/apps/bookstore-v2.yaml`{{exec}}   
