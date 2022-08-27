@@ -49,34 +49,34 @@ RUN `POD="$(kubectl get pods --selector app=bookthief -n bookthief --no-headers 
 
 URL:[Access Tekton]({{TRAFFIC_HOST1_8083}})    
 
-Test1：访问控制
->Warning: 目标：禁止 bookthief 从 bookstore 偷书，不影响书籍的正常购买。
+### Test1：访问控制
+>Info: 目标：禁止 bookthief 从 bookstore 偷书，不影响书籍的正常购买。    
 
-关闭宽松流量策略模式，检查 bookthief 和 bookbuyer 的计数器。
+关闭宽松流量策略模式，检查 bookthief 和 bookbuyer 的计数器。      
 RUN `kubectl patch meshconfig osm-mesh-config -n osm-system -p '{"spec":{"traffic":{"enablePermissiveTrafficPolicyMode":false}}}'  --type=merge
 `{{exec}}    
 
->Warning: 部署流量访问策略   
+>Warning: 部署流量访问策略。   
 
-允许正常的访问，然后检查页面上计数器的变化。     
+允许正常的访问，然后检查页面上计数器的变化。        
 
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/release-v1.1/manifests/access/traffic-access-v1.yaml
 `{{exec}}    
 
-Test2：灰度发布    
+### Test2：灰度发布    
 
-部署 bookstore-v2    
+部署 bookstore-v2 版本。                  
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/apps/bookstore-v2.yaml`{{exec}}   
 
 RUN `POD="$(kubectl get pods --selector app="bookstore-v2" -n bookstore --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookstore 8082:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}     
 
 URL:[Access Tekton]({{TRAFFIC_HOST1_8082}})    
 
-初始化流量拆分策略。       
+初始化流量拆分策略。         
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/split/traffic-split-v1.yaml
 `{{exec}}    
 
-将 50% 的流量放行到 bookstore-v2 中。     
+将 50% 的流量放行到 bookstore-v2 中。       
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/split/traffic-split-50-50.yaml
 `{{exec}}       
 
