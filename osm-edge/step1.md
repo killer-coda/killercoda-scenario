@@ -57,6 +57,8 @@ RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs
 
 RUN `kubectl apply -f https://raw.githubusercontent.com/flomesh-io/osm-edge-docs/main/manifests/apps/bookstore-v2.yaml`{{exec}}   
 
+RUN `POD="$(kubectl get pods --selector app="bookstore-v2" -n bookstore --no-headers | grep 'Running' | awk 'NR==1{print $1}')" && kubectl port-forward "$POD" -n bookstore 8082:14001 --address 0.0.0.0 > /dev/null 2>&1`{{exec}}   
+
 
 
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
