@@ -1,5 +1,7 @@
 ### Linkerd
 
+## https://linkerd.io/2.11/getting-started/#step-4-install-the-demo-app
+
 helm repo add linkerd https://helm.linkerd.io/stable
 
 exp=$(date -d '+8760 hour' +"%Y-%m-%dT%H:%M:%SZ")
