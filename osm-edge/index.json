@@ -22,7 +22,7 @@
       "assets": {
         "host01": [
           {"file": "namespace.yml", "target": "/ks", "chmod": "+x"},
-          {"file": "local-path-storage.yaml", "target": "/ks"}
+          {"file": "local-path-storage.yaml", "target": "/ks", "chmod": "+w"}
         ]
       }
     },
