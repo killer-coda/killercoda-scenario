@@ -15,7 +15,9 @@ RUN `wget https://github.com/cnrancher/kube-explorer/releases/download/v0.2.11/k
 
 RUN `nohup ./kube-explorer-linux-amd64 --http-listen-port=9898 --https-listen-port=0 &`{{exec}}
 
-RUN `kubectl get po -A`{{exec}}
+RUN `kubectl get po -A`{{exec}}    
 
 
-[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
+URL:[Access kube-explorer]({{TRAFFIC_HOST1_9898}})    
+
+Other:[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
