@@ -20,3 +20,4 @@ EOF
 
 kubectl get --namespace default secret kubeapps-operator-token -o go-template='{{.data.token | base64decode}}'
 
+kubectl port-forward --namespace kubeapps service/kubeapps --address=0.0.0.0  8080:80 > /dev/null 2>&1 &
