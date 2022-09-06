@@ -12,6 +12,8 @@ RUN `cp /etc/rancher/k3s/k3s.yaml ~/.kube/config`{{exec}}
 
 RUN `kubectl get po -A`{{exec}}
 
+## Install kube-ovn    
+
 RUN `wget https://raw.githubusercontent.com/kubeovn/kube-ovn/release-1.10/dist/images/install.sh`{{exec}}    
 
 
