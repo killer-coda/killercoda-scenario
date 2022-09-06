@@ -20,7 +20,10 @@ RUN `kubecolor describe node ubuntu`{{exec}}
 
 RUN `wget https://raw.githubusercontent.com/kubeovn/kube-ovn/release-1.10/dist/images/install.sh`{{exec}}    
 
+RUN `bash install.sh`{{exec}}   
 
-URL:[Access kube-explorer]({{TRAFFIC_HOST1_9898}})    
+
+## Mark
+URL:[Access URL]({{TRAFFIC_HOST1_80}})    
 
 Other:[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
