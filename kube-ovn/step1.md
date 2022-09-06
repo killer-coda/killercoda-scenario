@@ -10,7 +10,11 @@ RUN `mkdir -p $HOME/.kube`{{exec}}
 
 RUN `cp /etc/rancher/k3s/k3s.yaml ~/.kube/config`{{exec}}   
 
-RUN `kubectl get po -A`{{exec}}
+RUN `kubecolor get po -A`{{exec}}   
+
+RUN `kubecolor get node`{{exec}}   
+
+RUN `kubecolor describe node ubuntu`{{exec}} 
 
 ## Install kube-ovn    
 
