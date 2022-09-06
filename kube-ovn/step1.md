@@ -4,11 +4,7 @@ RUN `ls -l /etc/cni/net.d/`{{exec}}
 
 RUN `export INSTALL_K3S_VERSION=v1.23.8+k3s1; curl -sfL https://get.k3s.io | sh -s - --flannel-backend=none --disable-network-policy --cluster-cidr=10.16.0.0/16  --service-cidr=10.96.0.0/12 --disable=traefik --write-kubeconfig-mode 644 --write-kubeconfig ~/.kube/config`{{exec}}
 
-RUN `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`{{exec}}       
-
-RUN `mkdir -p $HOME/.kube`{{exec}}   
-
-RUN `cp /etc/rancher/k3s/k3s.yaml ~/.kube/config`{{exec}}   
+RUN `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`{{exec}}         
 
 RUN `kubecolor get po -A`{{exec}}   
 
