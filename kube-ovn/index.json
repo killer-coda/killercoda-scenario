@@ -1,0 +1,22 @@
+{
+  "title": "kube-ovn",
+  "description": "kube-ovn workshop",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "init.sh"
+    },
+    "steps": [
+      {
+        "title": "Install kube-ovn",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
