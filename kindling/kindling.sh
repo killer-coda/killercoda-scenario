@@ -1,3 +1,5 @@
+########## RUN `kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-  &&  kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-`{{exec}}  
+
 ### https://prometheus-operator.dev/docs/prologue/quick-start/  
 ### https://artifacthub.io/packages/helm/mesosphere/prometheus-operator  
 
