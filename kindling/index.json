@@ -1,0 +1,22 @@
+{
+  "title": "Kindling",
+  "description": "kindling workshop",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "init.sh"
+    },
+    "steps": [
+      {
+        "title": "Install kindling",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
