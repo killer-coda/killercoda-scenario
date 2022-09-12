@@ -1,4 +1,3 @@
-RUN `kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-  &&  kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-`{{exec}}    
 
 ## Install prometheus operator  
 RUN `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`{{exec}}    
