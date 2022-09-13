@@ -15,7 +15,7 @@ RUN `kubectl set image ds/kindling-agent kindling-agent=hbstarjason/kindling-age
 
 RUN `kubecolor get po -A`{{exec}}   
 
-## Install 
+## Install Grafana
 RUN `kubectl create -f https://k8s-bpf-probes-public.oss-cn-hangzhou.aliyuncs.com/kindling-grafana.yaml -n kindling`{{exec}}   
 
 RUN `kubectl get svc -n kindling | grep grafana`{{exec}}   
@@ -24,7 +24,9 @@ RUN `kubectl patch svc grafana  -n kindling --type='json' -p '[{"op":"replace","
 
 RUN `kubectl port-forward -n kindling --address=0.0.0.0 service/grafana 3000:3000 > /dev/null 2>&1 &`{{exec}}    
 
-[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
+[ACCESS Grafana]({{TRAFFIC_HOST1_3000}})
+
+>Info: http://prometheus-kube-prometheus-prometheus.default:9090/      
 
 ## Test
 RUN `kubectl create deployment nginx --image=nginx:alpine`{{exec}}   
