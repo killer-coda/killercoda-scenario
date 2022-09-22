@@ -1,4 +1,7 @@
-### https://docs.devstream.io/en/latest/quickstart/
+### https://docs.devstream.io/en/latest/quickstart/     
+### https://github.com/devstream-io
+
+### https://github.com/devstream-io/dtm-repo-scaffolding-java-springboot
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/devstream-io/devstream/main/hack/quick-start/quickstart.sh)"     
 
