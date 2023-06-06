@@ -1,5 +1,5 @@
 # install terraform
-TF_VERSION=1.2.7
+TF_VERSION=1.4.6
 curl -LO https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
 unzip terraform_${TF_VERSION}_linux_amd64.zip
 mv terraform /usr/local/bin
@@ -16,8 +16,8 @@ tar -xvf k9s_Linux_x86_64.tar.gz
 curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
 # install kubecolor
-wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz
-tar zvxf kubecolor_0.0.20_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/ && kubecolor version
+wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Linux_x86_64.tar.gz
+tar zvxf kubecolor_0.0.25_Linux_x86_64.tar.gz && cp kubecolor /usr/local/bin/ && kubecolor version
 
 # wait fo k8s ready
 while ! kubectl get nodes | grep -w "Ready"; do
