@@ -11,7 +11,7 @@
 
 `tkn version`{{execute}}    
 
-`kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.4/git-clone.yaml`{{execute}}      
+`kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.9/git-clone.yaml`{{execute}}      
 
 `tkn hub install task git-clone`{{execute}}     
 
