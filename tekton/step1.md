@@ -16,7 +16,7 @@
 `tkn hub install task git-clone`{{execute}}     
 
 3.Install Tekton Dashboard     
-`kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml`{{execute}}     
+`kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml`{{execute}}     
 
 `kubectl get pods --namespace tekton-pipelines`{{execute}}    
 
