@@ -22,4 +22,4 @@ URL:[Access prometheus]({{TRAFFIC_HOST1_9090}})
 
 URL:[Access prometheus]({{TRAFFIC_HOST1_80}})
 
-
+admin/prom-operator
