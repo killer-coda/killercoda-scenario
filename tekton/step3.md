@@ -7,3 +7,19 @@
 
 URL:[Access prometheus]({{TRAFFIC_HOST1_9999}})  
 
+
+`helm repo list && helm repo update`{{execute}}    
+
+`kubectl create ns monitor`{{execute}}    
+
+`helm install prometheus-stack prometheus-community/kube-prometheus-stack -n monitor`{{execute}}     
+
+`kubectl port-forward -n monitor --address 0.0.0.0  svc/prometheus-stack-kube-prom-prometheus  9090:9090 > /dev/null 2>&1 &`{{execute}}
+
+URL:[Access prometheus]({{TRAFFIC_HOST1_9090}})
+
+`kubectl port-forward -n monitor --address 0.0.0.0  svc/prometheus-stack-grafana  80:80 > /dev/null 2>&1 &`{{execute}}
+
+URL:[Access prometheus]({{TRAFFIC_HOST1_80}})
+
+
