@@ -5,3 +5,5 @@
 ` kubecolor get po -n monitoring`{{execute}}        
 
 ` kubecolor get svc -n monitoring`{{execute}}    
+
+`kubectl port-forward -n monitoring --address 0.0.0.0 svc/grafana 3000:3000 > /dev/null 2>&1 &`{{execute}}
