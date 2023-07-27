@@ -5,10 +5,11 @@ unzip terraform_${TF_VERSION}_linux_amd64.zip
 mv terraform /usr/local/bin
 terraform version   
 terraform -install-autocomplete
-touch ~/main.tf 
+
+#touch ~/main.tf 
 
 # install k9s
-K9S_VERSION=v0.26.3
+K9S_VERSION=v0.27.4
 wget https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Linux_x86_64.tar.gz
 tar -xvf k9s_Linux_x86_64.tar.gz
 
