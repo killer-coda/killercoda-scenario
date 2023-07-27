@@ -1,5 +1,5 @@
 # install terraform
-TF_VERSION=1.4.6
+TF_VERSION=1.5.2
 curl -LO https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
 unzip terraform_${TF_VERSION}_linux_amd64.zip
 mv terraform /usr/local/bin
@@ -29,6 +29,10 @@ touch /ks/.k8sfinished
 # allow pods to run on controlplane
 kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule-
 kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+
+## kubectl get nodes | grep -v "NAME" | awk '{print $1}' | sed -n '1p' | xargs -t -i kubectl taint node {} node-role.kubernetes.io/master- > /dev/null
+## kubectl get nodes | grep -v "NAME" | awk '{print $1}' | sed -n '1p' | xargs -t -i kubectl taint node {} node-role.kubernetes.io/control-plane- > /dev/null
+
 
 # mark init finished
 touch /ks/.initfinished
