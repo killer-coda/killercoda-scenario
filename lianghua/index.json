@@ -20,7 +20,7 @@
       }
     },
     "backend": {
-      "imageid": "kubernetes-kubeadm-2nodes"
+      "imageid": "ubuntu-4GB"  //https://killercoda.com/creators
     }
   }
   
