@@ -20,7 +20,11 @@
       }
     },
     "backend": {
-      "imageid": "ubuntu-4GB"  ### https://killercoda.com/creators
+      "imageid": "ubuntu-4GB"  
+        /* 
+        https://killercoda.com/creators
+        
+        */
     }
   }
   
