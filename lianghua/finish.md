@@ -3,4 +3,4 @@
 
 ### WELL DONE !
 
-After follow this scenario, you have known how to Install spinnaker.
+After follow this scenario, LiangHua.
