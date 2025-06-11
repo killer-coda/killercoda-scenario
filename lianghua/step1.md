@@ -6,7 +6,7 @@ RUN `pip install -r requirements.txt  --break-system-packages`{{exec}}
 
 ### 2.RUN
 
-sed -i  's/email/user/'  user_info.txt && sed -i  's/secret/pass/'  user_info.txt
+>Warning: sed -i  's/email/user/'  user_info.txt && sed -i  's/secret/pass/'  user_info.txt
 
 RUN `python digging_1step.py`{{exec}}      
 
