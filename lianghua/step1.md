@@ -2,7 +2,13 @@
 
 RUN `git clone https://github.com/hbstarjason2021/yangmao/ && cd yangmao/lianghua`{{exec}}
 
-RUN `pip install -r requirements.txt  --break-system-packages`{{exec}}      
+RUN `pip install -r requirements.txt  --break-system-packages`{{exec}}    
+
+RUN  `curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && sudo -E bash nodesource_setup.sh`{{exec}} 
+
+RUN  `sudo apt-get install -y nodejs`{{exec}} 
+
+RUN  `node -v`{{exec}} 
 
 ### 2.Run Code
 
