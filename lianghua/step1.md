@@ -27,6 +27,11 @@ RUN `python digging_2step.py`{{exec}}
 [ACCESS PORTS]({{TRAFFIC_SELECTOR}})
 
 
+RUN `sudo add-apt-repository ppa:fujiapple/trippy && sudo apt update && sudo apt install trippy`{{exec}} 
+
+RUN `trip bing.com`{{exec}} 
+
+
 
 
 
