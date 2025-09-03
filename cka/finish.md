@@ -3,4 +3,4 @@
 
 ### WELL DONE !
 
-After follow this scenario, LiangHua.
+After follow this scenario, CKA.
