@@ -1,5 +1,5 @@
 ### 1.Setup Environment 
->Warning:  URL：https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+>Warning:  URL：[horizontal-pod-autoscale-walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough)
 
 RUN `cat php-apache.yaml`{{exec}}  
 
@@ -9,6 +9,9 @@ RUN `kubectl apply -f https://k8s.io/examples/application/php-apache.yaml`{{exec
 
 RUN `kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10`{{exec}}  
 RUN `kubectl get hpa`{{exec}}  
+
+>Warning:  URL：[horizontal-pod-autoscale](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale)
+
 
 
 ### 2.Run Code
