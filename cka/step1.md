@@ -13,6 +13,12 @@ RUN `kubectl get hpa`{{exec}}
 >Warning:  URL：[horizontal-pod-autoscale](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale)
 
 
+## change downscale stabilization window 
+
+behavior:
+  scaleDown:
+    stabilizationWindowSeconds: 60
+
 
 ### 2.Run Code
 
