@@ -6,7 +6,7 @@ RUN `git clone `{{exec}}
 
 ### 2.Run Code
 
->Warning:  URL：
+>Warning:  URL：https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
 RUN `python `{{exec}}      
 
