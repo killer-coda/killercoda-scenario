@@ -16,10 +16,11 @@ RUN `kubectl get hpa`{{exec}}
 
 ### 3.change downscale stabilization window 
 
+```
 behavior:
   scaleDown:
     stabilizationWindowSeconds: 60
-
+```
 
 
 
