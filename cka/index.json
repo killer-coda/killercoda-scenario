@@ -7,7 +7,7 @@
       },
       "steps": [
         {
-          "title": "Install",
+          "title": "HPA",
           "text": "step1.md"
         },
         {
