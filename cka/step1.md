@@ -1,6 +1,7 @@
 ### 1.Setup Environment 
+RUN `cat php-apache.yaml`{{exec}}  
 
-RUN `git clone `{{exec}}
+RUN `kubectl apply -f https://k8s.io/examples/application/php-apache.yaml`{{exec}}
 
 
 
