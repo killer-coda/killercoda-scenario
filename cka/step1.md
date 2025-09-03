@@ -6,6 +6,7 @@ RUN `cat php-apache.yaml`{{exec}}
 RUN `kubectl apply -f https://k8s.io/examples/application/php-apache.yaml`{{exec}}
 
 
+### 2.Create RHorizontalPodAutoscaler
 
 RUN `kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10`{{exec}}  
 RUN `kubectl get hpa`{{exec}}  
@@ -13,14 +14,14 @@ RUN `kubectl get hpa`{{exec}}
 >Warning:  URL：[horizontal-pod-autoscale](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale)
 
 
-## change downscale stabilization window 
+### 3.change downscale stabilization window 
 
 behavior:
   scaleDown:
     stabilizationWindowSeconds: 60
 
 
-### 2.Run Code
+
 
 
 
