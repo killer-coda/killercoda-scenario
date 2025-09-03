@@ -1,0 +1,27 @@
+{
+    "title": "001CKA",
+    "description": "CKA Workshop",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Install",
+          "text": "step1.md"
+        },
+        {
+          "title": "Deploy First Application",
+          "text": "step2.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"  
+
+    }
+  }
+  
