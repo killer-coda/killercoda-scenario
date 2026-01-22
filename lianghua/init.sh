@@ -7,6 +7,16 @@ pip install requests pandas matplotlib  --break-system-packages
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash - 
 sudo apt-get install -y nodejs
 
+###
+pip uninstall docker-compose
+## sudo rm -rf /usr/local/bin/docker-compose
+
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+docker info --format '{{json .ClientInfo.Plugins}}' | grep compose
+docker compose version
 
 ############## 
 sudo rm -rf /usr/local/go
