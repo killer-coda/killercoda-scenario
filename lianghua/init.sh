@@ -1,7 +1,7 @@
 ###
 apt install net-tools  jq -y
 
-pip install requests pandas matplotlib  --break-system-packages
+pip install requests pandas matplotlib tqdm  --break-system-packages
 
 ## curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && sudo -E bash nodesource_setup.sh
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash - 
