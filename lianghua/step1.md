@@ -1,9 +1,10 @@
 ### 1.Setup Environment 
 
-RUN `git clone https://github.com/hbstarjason2021/wqb/ && cd wqb`{{exec}}
+RUN `git clone https://github.com/hbstarjason2021/wqb/ && cd wqb`{{exec}}  
 
-RUN `pip install -r requirements.txt  --break-system-packages`{{exec}}    
+RUN `pip install -r requirements.txt  --break-system-packages`{{exec}}      
 
+RUN `pip install requests pandas matplotlib tqdm aiohttp aiofiles  --break-system-packages`{{exec}} 
 
 ### 2.Run Code
 
