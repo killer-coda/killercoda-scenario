@@ -11,6 +11,12 @@ sudo apt-get install -y nodejs
 pip uninstall docker-compose -y --break-system-packages
 ## sudo rm -rf /usr/local/bin/docker-compose
 
+COMPOSE_VESION="v2.40.3"
+curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VESION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose 
+docker-compose version
+
+
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
 mkdir -p $DOCKER_CONFIG/cli-plugins
 curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
