@@ -8,7 +8,7 @@ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 sudo apt-get install -y nodejs
 
 ###
-pip uninstall docker-compose
+pip uninstall docker-compose -y --break-system-packages
 ## sudo rm -rf /usr/local/bin/docker-compose
 
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
