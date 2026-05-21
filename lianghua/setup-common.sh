@@ -12,7 +12,7 @@
 #   install_terraform
 #   install_tflint
 #   install_vault
-#   start_postgres()
+#   start_postgres
 #   finish_setup
 # ─────────────────────────────────────────────────────────
 
