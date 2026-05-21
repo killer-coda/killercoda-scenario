@@ -13,6 +13,53 @@
 # ─────────────────────────────────────────────────────────
 
 VAULT_VERSION="${VAULT_VERSION:-1.19.2}"
+TERRAFORM_VERSION="${TERRAFORM_VERSION:-1.15.3}"
+TFLINT_VERSION="${TFLINT_VERSION:-v0.61.0}"
+TERRAGRUNT_VERSION="${TERRAGRUNT_VERSION:-0.77.5}"
+
+install_terraform() {
+  if ! command -v unzip > /dev/null 2>&1; then
+    apt-get update -qq && apt-get install -y -qq unzip > /dev/null 2>&1
+  fi
+
+  # Install Docker Compose v2 plugin (binary download — apt package not available on Killercoda)
+  if ! docker compose version > /dev/null 2>&1; then
+    mkdir -p /usr/local/lib/docker/cli-plugins
+    curl --connect-timeout 10 --max-time 120 -fsSL \
+      "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64" \
+      -o /usr/local/lib/docker/cli-plugins/docker-compose
+    chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+  fi
+
+  curl --connect-timeout 10 --max-time 120 -fsSL \
+    "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" \
+    -o /tmp/terraform.zip \
+    && unzip -o -q /tmp/terraform.zip -d /usr/local/bin/ \
+    && chmod +x /usr/local/bin/terraform \
+    && rm -f /tmp/terraform.zip
+
+  terraform version || echo "WARNING: terraform install failed"
+}
+
+install_tflint() {
+  curl --connect-timeout 10 --max-time 120 -fsSL \
+    "https://github.com/terraform-linters/tflint/releases/download/${TFLINT_VERSION}/tflint_linux_amd64.zip" \
+    -o /tmp/tflint.zip \
+    && unzip -o -q /tmp/tflint.zip -d /usr/local/bin/ \
+    && chmod +x /usr/local/bin/tflint \
+    && rm -f /tmp/tflint.zip
+
+  tflint --version || echo "WARNING: tflint install failed"
+}
+
+install_terragrunt() {
+  curl --connect-timeout 10 --max-time 120 -fsSL \
+    "https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64" \
+    -o /usr/local/bin/terragrunt \
+    && chmod +x /usr/local/bin/terragrunt
+
+  terragrunt --version || echo "WARNING: terragrunt install failed"
+}
 
 install_vault() {
   # Idempotency guard: skip the 70MB download if the requested version is
