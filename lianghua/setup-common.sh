@@ -8,7 +8,11 @@
 #
 # Usage in background.sh:
 #   source /root/setup-common.sh
+
+#   install_terraform
+#   install_tflint
 #   install_vault
+#   start_postgres()
 #   finish_setup
 # ─────────────────────────────────────────────────────────
 
