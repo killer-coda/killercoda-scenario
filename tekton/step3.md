@@ -23,3 +23,9 @@ URL:[Access prometheus]({{TRAFFIC_HOST1_9090}})
 URL:[Access prometheus]({{TRAFFIC_HOST1_80}})
 
 admin/prom-operator
+
+
+>Warning:  [network-traffic](https://github.com/killercoda/scenario-examples/blob/main/network-traffic/step1.md)     
+`docker run -d -p 80:80 nginx:alpine`{{execute}}       
+[ACCESS NGINX]({{TRAFFIC_HOST1_80}})    
+[ACCESS PORTS]({{TRAFFIC_SELECTOR}})
